@@ -1,0 +1,152 @@
+[
+  {
+    "id": "dubu-jorim",
+    "name": "두부조림",
+    "steps": [
+      "두부 반 모를 1cm 두께로 썰어 키친타월로 물기를 뺀다.",
+      "팬에 식용유를 밥숟가락 1술 두르고 중불에서 두부를 앞뒤로 노릇하게 굽는다.",
+      "간장 밥숟가락 2술 + 물 종이컵 반 컵 + 고춧가루 밥숟가락 1술 + 다진 마늘 반 술을 섞어 붓는다.",
+      "약불로 줄여 국물이 자작해질 때까지 5분 졸이고 대파를 올려 마무리한다."
+    ],
+    "ingredients": [
+      { "ingredientId": "tofu", "display": "두부 반 모", "amount": 0.5, "unit": "모" },
+      { "ingredientId": "soy-sauce", "display": "간장 밥숟가락 2술", "amount": 2, "unit": "숟가락" },
+      { "ingredientId": "gochugaru", "display": "고춧가루 밥숟가락 1술", "amount": 1, "unit": "숟가락" },
+      { "ingredientId": "garlic", "display": "다진 마늘 반 술", "amount": 0.5, "unit": "숟가락" },
+      { "ingredientId": "green-onion", "display": "대파 한 줌", "amount": 0.2, "unit": "단" },
+      { "ingredientId": "cooking-oil", "display": "식용유 밥숟가락 1술", "amount": 1, "unit": "숟가락" }
+    ],
+    "cookMinutes": 15,
+    "difficulty": "easy",
+    "dishwashTag": "minimal",
+    "burnerCount": 1,
+    "nutritionTags": ["단백질 풍부"],
+    "estimatedCost": 2500,
+    "source": {
+      "channel": "자취요리신",
+      "videoTitle": "두부조림, 이 비율이면 실패 없습니다",
+      "url": "https://www.youtube.com/watch?v=SAMPLE-dubu"
+    },
+    "isStaple": true,
+    "spicyLevel": 1
+  },
+  {
+    "id": "kimchi-bokkeumbap",
+    "name": "김치볶음밥",
+    "steps": [
+      "김치 종이컵 1컵 분량을 가위로 잘게 자른다.",
+      "팬에 식용유 밥숟가락 1술을 두르고 김치를 중불에서 2분 볶는다.",
+      "밥 한 공기를 넣고 간장 반 술을 팬 가장자리에 둘러 향을 내며 3분 볶는다.",
+      "불을 끄고 참기름 반 술을 섞은 뒤, 같은 팬 한쪽에서 계란 1개(중)를 프라이해 올린다."
+    ],
+    "ingredients": [
+      { "ingredientId": "kimchi", "display": "김치 종이컵 1컵", "amount": 0.15, "unit": "kg" },
+      { "ingredientId": "rice", "display": "밥 한 공기", "amount": 0.2, "unit": "kg" },
+      { "ingredientId": "egg", "display": "계란 1개(중)", "amount": 1, "unit": "구" },
+      { "ingredientId": "soy-sauce", "display": "간장 반 술", "amount": 0.5, "unit": "숟가락" },
+      { "ingredientId": "sesame-oil", "display": "참기름 반 술", "amount": 0.5, "unit": "숟가락" },
+      { "ingredientId": "cooking-oil", "display": "식용유 밥숟가락 1술", "amount": 1, "unit": "숟가락" }
+    ],
+    "cookMinutes": 10,
+    "difficulty": "easy",
+    "dishwashTag": "minimal",
+    "burnerCount": 1,
+    "nutritionTags": ["든든한 탄수화물", "단백질 풍부"],
+    "estimatedCost": 3000,
+    "source": {
+      "channel": "백종원",
+      "videoTitle": "김치볶음밥, 이렇게 하면 무조건 맛있어요",
+      "url": "https://www.youtube.com/watch?v=SAMPLE-kimchi"
+    },
+    "isStaple": true,
+    "spicyLevel": 2
+  },
+  {
+    "id": "gyeran-guk",
+    "name": "계란국",
+    "steps": [
+      "냄비에 물 종이컵 2컵을 붓고 소금 한 꼬집과 간장 반 술로 밑간해 끓인다.",
+      "계란 2개(소)를 풀어 끓는 물에 원을 그리며 붓는다.",
+      "대파 한 줌을 썰어 넣고 30초 더 끓여 마무리한다."
+    ],
+    "ingredients": [
+      { "ingredientId": "egg", "display": "계란 2개(소)", "amount": 2, "unit": "구" },
+      { "ingredientId": "green-onion", "display": "대파 한 줌", "amount": 0.2, "unit": "단" },
+      { "ingredientId": "soy-sauce", "display": "간장 반 술", "amount": 0.5, "unit": "숟가락" },
+      { "ingredientId": "salt", "display": "소금 한 꼬집", "amount": 0.01, "unit": "g" }
+    ],
+    "cookMinutes": 10,
+    "difficulty": "easy",
+    "dishwashTag": "minimal",
+    "burnerCount": 1,
+    "nutritionTags": ["단백질 풍부"],
+    "estimatedCost": 1500,
+    "source": {
+      "channel": "자취요리신",
+      "videoTitle": "10분 계란국, 자취생 국물 해결",
+      "url": "https://www.youtube.com/watch?v=SAMPLE-gyeran"
+    },
+    "isStaple": true,
+    "spicyLevel": 0
+  },
+  {
+    "id": "hobak-doenjang-jjigae",
+    "name": "애호박 된장찌개",
+    "steps": [
+      "애호박 반 개와 양파 반 개, 두부 반 모를 한입 크기로 썬다.",
+      "냄비에 물 종이컵 2컵과 된장 밥숟가락 1술 반을 풀어 끓인다.",
+      "애호박·양파를 넣고 중불에서 7분 끓인다.",
+      "두부와 다진 마늘 반 술을 넣고 3분 더 끓인 뒤 대파로 마무리한다."
+    ],
+    "ingredients": [
+      { "ingredientId": "zucchini", "display": "애호박 반 개", "amount": 0.5, "unit": "개" },
+      { "ingredientId": "onion", "display": "양파 반 개", "amount": 0.1, "unit": "kg" },
+      { "ingredientId": "tofu", "display": "두부 반 모", "amount": 0.5, "unit": "모" },
+      { "ingredientId": "doenjang", "display": "된장 밥숟가락 1술 반", "amount": 1.5, "unit": "숟가락" },
+      { "ingredientId": "garlic", "display": "다진 마늘 반 술", "amount": 0.5, "unit": "숟가락" },
+      { "ingredientId": "green-onion", "display": "대파 한 줌", "amount": 0.2, "unit": "단" }
+    ],
+    "cookMinutes": 20,
+    "difficulty": "normal",
+    "dishwashTag": "normal",
+    "burnerCount": 1,
+    "nutritionTags": ["채소 보충", "단백질 풍부"],
+    "estimatedCost": 3500,
+    "source": {
+      "channel": "백종원",
+      "videoTitle": "된장찌개 황금비율, 이것만 기억하세요",
+      "url": "https://www.youtube.com/watch?v=SAMPLE-doenjang"
+    },
+    "isStaple": false,
+    "spicyLevel": 1
+  },
+  {
+    "id": "kongnamul-muchim",
+    "name": "콩나물무침",
+    "steps": [
+      "끓는 물에 소금 한 꼬집을 넣고 콩나물 300g을 뚜껑 덮고 4분 데친다.",
+      "찬물에 헹궈 물기를 꼭 짠다.",
+      "고춧가루 밥숟가락 1술 + 다진 마늘 반 술 + 참기름 반 술 + 소금 한 꼬집을 넣고 조물조물 무친다."
+    ],
+    "ingredients": [
+      { "ingredientId": "kongnamul", "display": "콩나물 300g 한 봉지", "amount": 1, "unit": "봉지" },
+      { "ingredientId": "gochugaru", "display": "고춧가루 밥숟가락 1술", "amount": 1, "unit": "숟가락" },
+      { "ingredientId": "garlic", "display": "다진 마늘 반 술", "amount": 0.5, "unit": "숟가락" },
+      { "ingredientId": "sesame-oil", "display": "참기름 반 술", "amount": 0.5, "unit": "숟가락" },
+      { "ingredientId": "salt", "display": "소금 한 꼬집", "amount": 0.01, "unit": "g" }
+    ],
+    "cookMinutes": 10,
+    "difficulty": "easy",
+    "dishwashTag": "minimal",
+    "burnerCount": 1,
+    "nutritionTags": ["채소 보충"],
+    "estimatedCost": 1500,
+    "source": {
+      "channel": "백종원",
+      "videoTitle": "콩나물무침 아삭하게 무치는 법",
+      "url": "https://www.youtube.com/watch?v=SAMPLE-kongnamul"
+    },
+    "isStaple": false,
+    "spicyLevel": 1
+  }
+]

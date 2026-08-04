@@ -1,0 +1,20 @@
+{
+  "asOf": "2026-07",
+  "items": [
+    { "id": "tofu", "unit": "1모(300g)", "price": 1500 },
+    { "id": "egg", "unit": "10구", "price": 4500 },
+    { "id": "kimchi", "unit": "1kg", "price": 8000 },
+    { "id": "rice", "unit": "1kg", "price": 4000 },
+    { "id": "zucchini", "unit": "1개", "price": 1200 },
+    { "id": "doenjang", "unit": "500g", "price": 5500 },
+    { "id": "kongnamul", "unit": "300g", "price": 1500 },
+    { "id": "green-onion", "unit": "1단", "price": 2500 },
+    { "id": "garlic", "unit": "200g", "price": 3000 },
+    { "id": "onion", "unit": "1kg", "price": 3000 },
+    { "id": "soy-sauce", "unit": "500ml", "price": 4000 },
+    { "id": "gochugaru", "unit": "250g", "price": 6000 },
+    { "id": "sesame-oil", "unit": "160ml", "price": 4500 },
+    { "id": "cooking-oil", "unit": "500ml", "price": 3500 },
+    { "id": "salt", "unit": "500g", "price": 1500 }
+  ]
+}

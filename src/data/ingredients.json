@@ -1,0 +1,17 @@
+[
+  { "id": "tofu", "name": "두부", "shelfLifeDays": 7, "seasonalMonths": [], "priceRef": "tofu" },
+  { "id": "egg", "name": "계란", "shelfLifeDays": 21, "seasonalMonths": [], "priceRef": "egg" },
+  { "id": "kimchi", "name": "김치", "shelfLifeDays": 60, "seasonalMonths": [], "priceRef": "kimchi" },
+  { "id": "rice", "name": "밥(쌀)", "shelfLifeDays": 180, "seasonalMonths": [], "priceRef": "rice" },
+  { "id": "zucchini", "name": "애호박", "shelfLifeDays": 7, "seasonalMonths": [6, 7, 8, 9], "priceRef": "zucchini" },
+  { "id": "doenjang", "name": "된장", "shelfLifeDays": 365, "seasonalMonths": [], "priceRef": "doenjang" },
+  { "id": "kongnamul", "name": "콩나물", "shelfLifeDays": 4, "seasonalMonths": [], "priceRef": "kongnamul" },
+  { "id": "green-onion", "name": "대파", "shelfLifeDays": 10, "seasonalMonths": [10, 11, 12], "priceRef": "green-onion" },
+  { "id": "garlic", "name": "다진 마늘", "shelfLifeDays": 30, "seasonalMonths": [], "priceRef": "garlic" },
+  { "id": "onion", "name": "양파", "shelfLifeDays": 30, "seasonalMonths": [], "priceRef": "onion" },
+  { "id": "soy-sauce", "name": "간장", "shelfLifeDays": 365, "seasonalMonths": [], "priceRef": "soy-sauce" },
+  { "id": "gochugaru", "name": "고춧가루", "shelfLifeDays": 180, "seasonalMonths": [], "priceRef": "gochugaru" },
+  { "id": "sesame-oil", "name": "참기름", "shelfLifeDays": 365, "seasonalMonths": [], "priceRef": "sesame-oil" },
+  { "id": "cooking-oil", "name": "식용유", "shelfLifeDays": 365, "seasonalMonths": [], "priceRef": "cooking-oil" },
+  { "id": "salt", "name": "소금", "shelfLifeDays": 3650, "seasonalMonths": [], "priceRef": "salt" }
+]

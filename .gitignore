@@ -1,0 +1,29 @@
+# 의존성
+node_modules/
+
+# 빌드 산출물
+dist/
+dev-dist/
+
+# 환경변수 — 시크릿이 들어가므로 절대 커밋 금지 (.env.example만 커밋 허용)
+.env
+.env.*
+!.env.example
+
+# 로그
+logs/
+*.log
+
+# 테스트 커버리지
+coverage/
+
+# 에디터 / IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# 로컬 전용 설정
+.claude/settings.local.json
