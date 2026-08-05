@@ -9,6 +9,10 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: CardVariant;
   /** 상단 이미지 영역(높이 160). 제외 가능. */
   media?: ReactNode;
+  /** 미디어 래퍼 클래스 오버라이드 — 하이파이 페이지의 88/190px 등 높이·비율 변형용 */
+  mediaClassName?: string;
+  /** 본문 래퍼 클래스 오버라이드(패딩·flex 등) */
+  bodyClassName?: string;
 }
 
 const VARIANT_CLASSES: Record<CardVariant, string> = {
@@ -19,7 +23,15 @@ const VARIANT_CLASSES: Record<CardVariant, string> = {
 };
 
 /** D/Card — radius-card(18px) 컨테이너 + 이미지 영역(선택) + 본문(패딩 16, 갭 10). */
-export function Card({ variant = "default", media, className, children, ...rest }: CardProps) {
+export function Card({
+  variant = "default",
+  media,
+  mediaClassName,
+  bodyClassName,
+  className,
+  children,
+  ...rest
+}: CardProps) {
   return (
     <div
       className={cn(
@@ -30,11 +42,17 @@ export function Card({ variant = "default", media, className, children, ...rest 
       {...rest}
     >
       {media && (
-        <div className="h-40 w-full shrink-0 overflow-hidden [&_img]:size-full [&_img]:object-cover">
+        <div
+          data-slot="media"
+          className={cn(
+            "h-40 w-full shrink-0 overflow-hidden [&_img]:size-full [&_img]:object-cover",
+            mediaClassName,
+          )}
+        >
           {media}
         </div>
       )}
-      <div className="flex w-full flex-col gap-2.5 p-4">{children}</div>
+      <div className={cn("flex w-full flex-col gap-2.5 p-4", bodyClassName)}>{children}</div>
     </div>
   );
 }

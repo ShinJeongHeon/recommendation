@@ -67,6 +67,22 @@ export const Variants: Story = {
   },
 };
 
+/** 미디어 높이·본문 패딩 오버라이드 — 하이파이 페이지의 88/190px 미디어 카드용 */
+export const CustomMediaHeight: Story = {
+  render: () => (
+    <div className="w-[360px] bg-background-default p-6">
+      <Card media={media} mediaClassName="h-auto aspect-[9/5]" bodyClassName="p-3">
+        <h3 className="typo-heading-sm text-text-default">두부 김치</h3>
+      </Card>
+    </div>
+  ),
+  play: async ({ canvasElement }) => {
+    const mediaEl = canvasElement.querySelector("[data-slot=media]");
+    await expect(mediaEl).not.toBeNull();
+    await expect(mediaEl!.className).toContain("aspect-[9/5]");
+  },
+};
+
 /** 이미지 영역 제외 구성 */
 export const WithoutMedia: Story = {
   render: () => (
