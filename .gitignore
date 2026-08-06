@@ -20,13 +20,28 @@ logs/
 # 테스트 커버리지
 coverage/
 
+# 인증서·개인키 — 절대 커밋 금지
+*.pem
+*.key
+*.p12
+*.pfx
+
+# TypeScript 증분 빌드 캐시
+*.tsbuildinfo
+
 # 에디터 / IDE
 .vscode/
 .idea/
 
-# OS
+# 린트 캐시
+.eslintcache
+
+# OS / OneDrive·Office 임시 파일
 Thumbs.db
+desktop.ini
 .DS_Store
+~$*
+*.tmp
 
 # 로컬 전용 설정
 .claude/settings.local.json
