@@ -7,7 +7,12 @@ const meta = {
   component: MyPageView,
   parameters: { layout: "fullscreen", nextjs: { appDirectory: true } },
   tags: ["ai-generated"],
-  args: { userId: "00000000-0000-0000-0000-000000000000", profileName: "소진" },
+  args: {
+    userId: "00000000-0000-0000-0000-000000000000",
+    profileName: "소진",
+    profileImagePath: null,
+    profileImageUrl: null,
+  },
 } satisfies Meta<typeof MyPageView>;
 
 export default meta;
