@@ -7,6 +7,11 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(dirname, 'src')
+    }
+  },
   test: {
     projects: [{
       extends: true,

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/ui/button/Button";
-import { createClient } from "@/lib/supabase/client";
 
 /* 구글 브랜드 로고 — 4색은 tokens의 --color-logo-google-*와 동일값(SVG fill 특성상 인라인) */
 function GoogleLogo() {
@@ -29,28 +28,17 @@ function GoogleLogo() {
   );
 }
 
-/** Supabase Auth 구글 OAuth 시작 버튼. 실패 시 /login?error=auth로 돌아와 에러 문구를 띄운다. */
+/** 구글 OAuth 시작 버튼 — BFF(/api/auth/login)로 이동한다. 실패 시 /login?error=auth로 돌아와 에러 문구를 띄운다. */
 export function GoogleLoginButton() {
   const [loading, setLoading] = useState(false);
-  const [failed, setFailed] = useState(false);
   const searchParams = useSearchParams();
-  const showError = failed || searchParams.get("error") === "auth";
+  const showError = !loading && searchParams.get("error") === "auth";
 
-  async function handleLogin() {
+  function handleLogin() {
     setLoading(true);
-    setFailed(false);
-    const supabase = createClient();
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${location.origin}/auth/callback?next=/`,
-      },
-    });
-    // 성공하면 구글로 리다이렉트되므로 여기 도달하는 건 실패했을 때뿐
-    if (error) {
-      setLoading(false);
-      setFailed(true);
-    }
+    // router.push는 RSC 페치 기반이라 외부(구글)로의 303 리다이렉트가 안 된다 — 전체 페이지 이동 필요
+    // eslint-disable-next-line @next/next/no-location-assign-relative-destination
+    window.location.href = "/api/auth/login?provider=google";
   }
 
   return (

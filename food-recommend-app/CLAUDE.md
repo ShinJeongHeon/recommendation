@@ -1,5 +1,12 @@
 @AGENTS.md
 
+# Supabase 접근 규칙 (BFF)
+
+- 모든 Supabase API 호출(DB 쿼리·Storage·RPC 등)은 Next.js BFF를 통해서만 구현한다: Route Handler(`src/app/api/**`), 서버 컴포넌트, 서버 액션에서 `src/lib/supabase/server.ts` 클라이언트를 사용.
+- 클라이언트 컴포넌트에서 브라우저 Supabase 클라이언트를 만들지 않는다(현재 브라우저 클라이언트 파일 자체가 없다). 필요한 데이터는 `fetch('/api/...')`로 BFF를 경유한다.
+- 인증도 BFF 경유: 소셜 로그인 시작은 `/api/auth/login?provider=...`(서버에서 `signInWithOAuth` 후 `data.url`로 303), 콜백은 `auth/callback` Route Handler, 세션 갱신은 `src/proxy.ts`(@supabase/ssr)가 담당한다.
+- 새 BFF 엔드포인트는 요청 검증(인증 확인 포함) 후 Supabase를 호출하고, Supabase 에러를 그대로 노출하지 않고 적절한 HTTP 상태코드로 매핑한다.
+
 # 디자인 SSOT
 
 - 스토리북이 디자인 SSOT다.

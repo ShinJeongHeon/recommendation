@@ -2,62 +2,48 @@
 
 import { useRouter } from "next/navigation";
 import { ProfileCard } from "@/blocks/profile-card/ProfileCard";
-import { uploadProfileImage } from "@/lib/profile-image";
-import { createClient } from "@/lib/supabase/client";
+import { validateProfileImageFile } from "@/lib/profile-image";
 
 interface MyProfileCardProps {
-  userId: string;
   name: string;
   subtitle: string;
-  /** profiles.image_path 원본 — 교체 성공 시 이전 파일 삭제 대상 */
-  imagePath: string | null;
   /** 표시용 공개 URL — null이면 기본 아이콘 */
   imageUrl: string | null;
 }
 
 /** 실패 사유 코드 → 한국어 안내문 (contracts/profile-image-module.md §3) */
-const UPLOAD_ERROR_MESSAGES = {
+const UPLOAD_ERROR_MESSAGES: Record<string, string> = {
   type: "JPG·PNG·WebP 이미지만 올릴 수 있어요.",
   size: "5MB 이하 이미지만 올릴 수 있어요.",
-  upload: "업로드에 실패했어요. 잠시 후 다시 시도해 주세요.",
-  update: "업로드에 실패했어요. 잠시 후 다시 시도해 주세요.",
-} as const;
+};
+const GENERIC_UPLOAD_ERROR = "업로드에 실패했어요. 잠시 후 다시 시도해 주세요.";
 
-/** ProfileCard를 Supabase profiles·storage에 연결 — 저장 후 서버 렌더 데이터를 새로고침한다. */
-export function MyProfileCard({ userId, name, subtitle, imagePath, imageUrl }: MyProfileCardProps) {
+/** ProfileCard를 BFF(/api/profile*)에 연결 — 저장 후 서버 렌더 데이터를 새로고침한다. */
+export function MyProfileCard({ name, subtitle, imageUrl }: MyProfileCardProps) {
   const router = useRouter();
 
   async function saveName(nextName: string) {
-    const supabase = createClient();
-    const { error } = await supabase.from("profiles").update({ name: nextName }).eq("user_id", userId);
-    if (error) throw error;
+    const res = await fetch("/api/profile", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: nextName }),
+    });
+    if (!res.ok) throw new Error("이름 저장에 실패했어요.");
     router.refresh();
   }
 
   async function selectImage(file: File) {
-    const supabase = createClient();
-    const result = await uploadProfileImage(
-      {
-        upload: async (path, blob) => {
-          const { error } = await supabase.storage.from("profile-image").upload(path, blob);
-          return { error };
-        },
-        updateImagePath: async (path) => {
-          const { error } = await supabase
-            .from("profiles")
-            .update({ image_path: path })
-            .eq("user_id", userId);
-          return { error };
-        },
-        removeOld: async (path) => {
-          const { error } = await supabase.storage.from("profile-image").remove([path]);
-          return { error };
-        },
-        randomUUID: () => crypto.randomUUID(),
-      },
-      { userId, file, previousImagePath: imagePath },
-    );
-    if (!result.ok) throw new Error(UPLOAD_ERROR_MESSAGES[result.reason]);
+    // 서버 왕복 전에 형식·용량을 먼저 걸러 빠르게 안내한다 — 서버가 동일 규칙으로 재검증
+    const valid = validateProfileImageFile(file.type, file.size);
+    if (!valid.ok) throw new Error(UPLOAD_ERROR_MESSAGES[valid.reason]);
+
+    const form = new FormData();
+    form.append("file", file);
+    const res = await fetch("/api/profile/image", { method: "POST", body: form });
+    if (!res.ok) {
+      const body = await res.json().catch(() => null);
+      throw new Error(UPLOAD_ERROR_MESSAGES[body?.error] ?? GENERIC_UPLOAD_ERROR);
+    }
     router.refresh();
   }
 

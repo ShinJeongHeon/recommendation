@@ -22,9 +22,7 @@ export default async function MyPage() {
 
   return (
     <MyPageView
-      userId={claims.sub}
       profileName={profile?.name ?? "집밥러"}
-      profileImagePath={imagePath}
       profileImageUrl={baseUrl ? profileImageUrl(baseUrl, imagePath) : null}
     />
   );

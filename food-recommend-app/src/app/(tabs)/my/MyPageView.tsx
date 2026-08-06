@@ -6,24 +6,19 @@ import { MyProfileCard } from "./MyProfileCard";
 const CARD = "rounded-card border border-border-default bg-background-surface";
 
 export interface MyPageViewProps {
-  userId: string;
   profileName: string;
-  /** profiles.image_path 원본 값 — 교체 시 이전 파일 삭제에 쓴다 */
-  profileImagePath: string | null;
   /** 표시용 공개 URL (base + path 조합, 없으면 null → 기본 아이콘) */
   profileImageUrl: string | null;
 }
 
-export function MyPageView({ userId, profileName, profileImagePath, profileImageUrl }: MyPageViewProps) {
+export function MyPageView({ profileName, profileImageUrl }: MyPageViewProps) {
   return (
     <main className="flex flex-col gap-5 pt-8">
       <h1 className="typo-display-sm text-text-default">마이페이지</h1>
 
       <MyProfileCard
-        userId={userId}
         name={profileName}
         subtitle="집밥 34일째 · 총 62끼 · 절약 384,000원"
-        imagePath={profileImagePath}
         imageUrl={profileImageUrl}
       />
 
