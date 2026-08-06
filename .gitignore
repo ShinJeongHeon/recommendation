@@ -5,6 +5,9 @@ node_modules/
 dist/
 dev-dist/
 
+# 디자인 생성 중간 산출물 (41MB) — .pen 원본만 커밋, 추출 이미지는 로컬 보관
+/images/
+
 # 환경변수 — 시크릿이 들어가므로 절대 커밋 금지 (.env.example만 커밋 허용)
 .env
 .env.*
