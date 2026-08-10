@@ -875,6 +875,7 @@
                       "name": "Badge · 오늘의 한 접시",
                       "height": 24,
                       "cornerRadius": 12,
+                      "enabled": true,
                       "descendants": {
                         "WZYK2": {
                           "content": "오늘의 한 접시"
@@ -2861,6 +2862,7 @@
               "ref": "e76ZIn",
               "name": "Status Bar",
               "width": "fill_container",
+              "enabled": true,
               "descendants": {
                 "dOlTe": {
                   "fill": "$color-text-inverse"
